@@ -1,5 +1,6 @@
 # LearningSandbox Introduction
 The interesting code snippets and some common thing implementation investigated, learned, or just revisited during learning process.
+
 The motivation behind this projet is reminding myself about some fun behavior that CLR or C# compiler can produce. 
 However, main goal is have fun and enjoy learning process.
 
@@ -8,11 +9,13 @@ However, main goal is have fun and enjoy learning process.
 some other free tools provided by CLR or VS we can have a better picture of all boxing cases in our
 solution.
 Using ILdasm.exe and navigating to the right section of IL code we can see the following picture.
-![ildasm](https://github.com/omelianlevkovych/LearningSandbox/blob/main/src/Boxing-ILdasm/SimpleBoxing/resources/Capture.PNG?raw=true)
-
+![ildasm](https://github.com/[omelianlevkovych]/[LearningSandbox]/blob/[main]/src/Boxing-Ildasm/SimpleBoxing/resources/capture.png?raw=true)
 Also, by invoking the following command: 
 Ildasm.exe yourcomponent.dll /text | findstr box
 we can generate a text file with all cases where the boxing occures.
+
+By using CLR Heap Allocation Analyzer is also possible to catch some boxing available in the solution (but not all the cases).
+![ildasm](https://github.com/[omelianlevkovych]/[LearningSandbox]/blob/[main]/src/Boxing-Ildasm/SimpleBoxing/resources/clrheap.png?raw=true)
 
 
 # Getting Started
