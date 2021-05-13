@@ -9,7 +9,10 @@ However, main goal is have fun and enjoy learning process.
 some other free tools provided by CLR or VS we can have a better picture of all boxing cases in our
 solution.
 Using ILdasm.exe and navigating to the right section of IL code we can see the following picture.
-![ildasm](https://github.com/omelianlevkovych/LearningSandbox/blob/main/src/Boxing-ILdasm/SimpleBoxing/resources/Capture.png?raw=true)
+
+![ildasm](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+![ildasm](https://github.com/omelianlevkovych/LearningSandbox/blob/main/src/Boxing-ILdasm/SimpleBoxing/resources/Capture.PNG?raw=true)
 Also, by invoking the following command: 
 Ildasm.exe yourcomponent.dll /text | findstr box
 we can generate a text file with all cases where the boxing occures.
