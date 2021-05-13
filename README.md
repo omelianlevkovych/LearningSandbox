@@ -10,15 +10,14 @@ some other free tools provided by CLR or VS we can have a better picture of all 
 solution.
 Using ILdasm.exe and navigating to the right section of IL code we can see the following picture.
 
-![ildasm](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-
 ![ildasm](https://github.com/omelianlevkovych/LearningSandbox/blob/main/src/Boxing-ILdasm/SimpleBoxing/resources/Capture.PNG?raw=true)
 Also, by invoking the following command: 
 Ildasm.exe yourcomponent.dll /text | findstr box
 we can generate a text file with all cases where the boxing occures.
 
 By using CLR Heap Allocation Analyzer is also possible to catch some boxing available in the solution (but not all the cases).
-![ildasm](github.com/omelianlevkovych/LearningSandbox/blob/main/src/Boxing-ILdasm/SimpleBoxing/resources/clrheap.png?raw=true)
+
+![ildasm](https://github.com/omelianlevkovych/LearningSandbox/blob/main/src/Boxing-ILdasm/SimpleBoxing/resources/clrheap.PNG?raw=true)
 
 
 # Getting Started
