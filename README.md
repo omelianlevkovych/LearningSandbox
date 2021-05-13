@@ -15,7 +15,7 @@ Ildasm.exe yourcomponent.dll /text | findstr box
 we can generate a text file with all cases where the boxing occures.
 
 By using CLR Heap Allocation Analyzer is also possible to catch some boxing available in the solution (but not all the cases).
-![ildasm](github.com/omelianlevkovych/LearningSandbox/blob/main/src/Boxing-ILdasm/SimpleBoxing/resources/clrheap.PNG?raw=true)
+![ildasm](github.com/omelianlevkovych/LearningSandbox/blob/main/src/Boxing-ILdasm/SimpleBoxing/resources/clrheap.png?raw=true)
 
 
 # Getting Started
