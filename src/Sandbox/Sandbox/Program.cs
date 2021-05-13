@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sandbox.StudyCases;
+using Sandbox.StudyCases.Interfaces;
+using System;
 
 namespace Sandbox
 {
@@ -6,7 +8,10 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var studyCase = new Equality();
+            studyCase.Explore();
+
+            Console.ReadKey();
         }
     }
 }
