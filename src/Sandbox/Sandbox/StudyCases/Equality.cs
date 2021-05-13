@@ -1,7 +1,5 @@
 ﻿using Sandbox.StudyCases.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Sandbox.StudyCases
 {
@@ -10,21 +8,6 @@ namespace Sandbox.StudyCases
     /// </summary>
     public sealed class Equality : IStudyCase
     {
-        public delegate bool ExecutionDelegate();
-        private readonly List<(bool expectedResult, ExecutionDelegate)> cases;
-
-        public Equality()
-        {
-            cases = new List<(bool, ExecutionDelegate)>
-            {
-                (false, new ExecutionDelegate(FirstCase)),
-                (true, new ExecutionDelegate(SecondCase)),
-                (false, new ExecutionDelegate(ThirdCase)),
-            };
-        }
-
-        public List<(bool expectedResult, ExecutionDelegate)> Cases => cases;
-
         private class ExampleClass
         {
             public int Value { get; set; }
@@ -82,10 +65,9 @@ namespace Sandbox.StudyCases
 
         public void Explore()
         {
-            foreach (var methodCase in cases)
-            {
-                Console.WriteLine(methodCase.Item2.Invoke());
-            }
+            Console.WriteLine(FirstCase());
+            Console.WriteLine(SecondCase());
+            Console.WriteLine(ThirdCase());
         }
     }
 }

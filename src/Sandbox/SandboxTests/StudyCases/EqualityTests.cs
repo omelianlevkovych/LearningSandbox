@@ -11,15 +11,9 @@ namespace SandboxTests.StudyCases
         [Fact]
         public void VerifyRunAndExploreMethod()
         {
-            // Arrange
-            var studyCase = new Equality();
-
-            // Act, Assert
-            var results = studyCase.Cases;
-            foreach (var item in results)
-            {
-                Assert.Equal(item.expectedResult, item.Item2.Invoke());
-            }
+            Assert.False(Equality.FirstCase());
+            Assert.True(Equality.SecondCase());
+            Assert.False(Equality.ThirdCase());
         }
     }
 }
