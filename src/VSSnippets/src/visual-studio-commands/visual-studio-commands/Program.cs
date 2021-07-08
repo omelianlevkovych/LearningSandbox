@@ -8,6 +8,7 @@ namespace visual_studio_commands
         {
             ISomeInterface
                 someInstance = new SomeClass("HelloWorld!");
+
             someInstance.Show();
         }
     }
