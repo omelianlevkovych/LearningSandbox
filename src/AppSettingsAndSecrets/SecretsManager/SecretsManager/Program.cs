@@ -29,6 +29,8 @@ namespace SecretsManager
                     }
                     builder.AddEnvironmentVariables();
                     builder.AddCommandLine(args);
+
+                    // builder.AddAWSKeyVault("https://appsettingmanagervault.vault.aws.net/");
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {

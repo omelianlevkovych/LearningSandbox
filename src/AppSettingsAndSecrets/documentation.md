@@ -28,3 +28,9 @@ AppSettings -> AppSettings[Environment_Specific]
 To manage the user secret right click on your project and find the corresponding operation.
 
 Important fact is that secrets are overriten by specific environment appsettings.
+
+# Azure Key Vault
+- Key Vault is best for all environments other than Development.
+- Key Vault secures sensetive data (encrypted)
+- Key never leaves Vault
+- Prebuild configuration for .NET
