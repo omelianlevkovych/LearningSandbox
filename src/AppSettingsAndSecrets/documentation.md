@@ -10,3 +10,27 @@ For istance:
 
 # Why secrets should be secured
 Because after a not trusted person get our secrets we will get compromised.
+
+# The way of getting data from appsettings.json
+- By direct IConfiguration (configuration.GetValue<T> or configuration.GetSection).
+- Create model to bind the data. Drowbacks is that naming should be synchronized.
+- By using IOptions
+
+# Environment
+AppSettings -> AppSettings[Environment_Specific]
+
+# User Secrets (SecretManager)
+- Only applies to development environment
+- Secrets are stored in a plain text
+- Keep secrets out of the source control
+- Light-weight and simple to use
+
+To manage the user secret right click on your project and find the corresponding operation.
+
+Important fact is that secrets are overriten by specific environment appsettings.
+
+# Azure Key Vault
+- Key Vault is best for all environments other than Development.
+- Key Vault secures sensetive data (encrypted)
+- Key never leaves Vault
+- Prebuild configuration for .NET
