@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using SecretsManager.Models;
 using System;
 using System.Collections.Generic;
@@ -21,16 +22,21 @@ namespace SecretsManager.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly IConfiguration configuration;
         private readonly TestSettings testSettings;
+        private readonly IOptions<TestSettings> testOptions;
 
         public WeatherForecastController(
             ILogger<WeatherForecastController> logger,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            IOptions<TestSettings> testOptions,
+            TestSettings testSettings)
         {
             _logger = logger;
             this.configuration = configuration;
-            
-            testSettings = new TestSettings();
-            configuration.GetSection("Test").Bind(testSettings);
+
+            this.testSettings = testSettings;
+
+            // Configured in Startup.cs as DI
+            this.testOptions = testOptions;
         }
 
         [HttpGet]
@@ -65,6 +71,12 @@ namespace SecretsManager.Controllers
         public ActionResult<string> GetBindedSettings()
         {
             return testSettings.PhoneNumber;
+        }
+
+        [HttpGet("get-settings-by-options")]
+        public ActionResult<string> GetByOptions()
+        {
+            return testOptions.Value.PhoneNumber;
         }
     }
 }

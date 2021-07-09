@@ -10,3 +10,9 @@ For istance:
 
 # Why secrets should be secured
 Because after a not trusted person get our secrets we will get compromised.
+
+# The way of getting data from appsettings.json
+- By direct IConfiguration (configuration.GetValue<T> or configuration.GetSection).
+- Create model to bind the data. Drowbacks is that naming should be synchronized.
+- By using IOptions
+
