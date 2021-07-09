@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using SecretsManager.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace SecretsManager.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly IConfiguration configuration;
+        private readonly TestSettings testSettings;
 
         public WeatherForecastController(
             ILogger<WeatherForecastController> logger,
@@ -26,6 +28,9 @@ namespace SecretsManager.Controllers
         {
             _logger = logger;
             this.configuration = configuration;
+            
+            testSettings = new TestSettings();
+            configuration.GetSection("Test").Bind(testSettings);
         }
 
         [HttpGet]
@@ -54,6 +59,12 @@ namespace SecretsManager.Controllers
             var secondLevelSettingSection = firstLevelSettingSection.GetSection("SecondLevelSetting");
             var lastLevelSettingSection = secondLevelSettingSection.GetSection("LastLevelSetting");
             return lastLevelSettingSection.Value;
+        }
+
+        [HttpGet("get-binded-settings")]
+        public ActionResult<string> GetBindedSettings()
+        {
+            return testSettings.PhoneNumber;
         }
     }
 }
