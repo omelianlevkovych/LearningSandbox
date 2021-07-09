@@ -78,5 +78,11 @@ namespace SecretsManager.Controllers
         {
             return testOptions.Value.PhoneNumber;
         }
+
+        [HttpGet("my-secret")]
+        public ActionResult<string> GetMySecret()
+        {
+            return configuration.GetValue<string>("MySecret");
+        }
     }
 }
